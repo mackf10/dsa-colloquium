@@ -7,29 +7,3 @@ Tech demo for DSA-201
 And then there's some text below.
 
 ### This is a thing I did on my local machine.
-
-```{r}
-library(readr)
-i94_metro_interstate_traffic <- read_csv("C:/Users/Admin/Downloads/i94_metro_interstate_traffic.csv")
-
-
-library(dplyr)
-library(ggplot2)
-
-
-traffic_volume_avgs <- i94_metro_interstate_traffic %>% 
-    group_by(dt_hour) %>%
-    summarize(
-        avg = mean(traffic_volume)
-        )
-traffic_volume_avgs %>%
-   ggplot(aes(x = dt_hour, y = avg)) +
-   geom_line() +
-   labs(
-     title = "Average Traffic Volume at Different Hours",
-     x = "Hour of Day",
-     y = "Average Traffic Volume"
-
-)
-
-```

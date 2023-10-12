@@ -11,6 +11,20 @@
     "href": "about.html",
     "title": "About",
     "section": "",
-    "text": "About this site\n\n1 + 1\n\n[1] 2"
+    "text": "Tech demo for DSA-201\n\n\nAnd then there’s some text below.\n\n\n\nlibrary(readr)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(ggplot2)\n\ni94_metro_interstate_traffic &lt;- read_csv(\"C:/Users/Admin/Downloads/i94_metro_interstate_traffic.csv\")\n\nRows: 48204 Columns: 15\n\n\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (6): holiday, weather_main, weather_description, dt_month, dt_wday, dt_...\ndbl  (8): temp, rain_1h, snow_1h, clouds_all, traffic_volume, dt_year, dt_da...\ndttm (1): date_time\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\n\n\n\n\ntraffic_volume_avgs &lt;- i94_metro_interstate_traffic %&gt;% \n    group_by(dt_hour) %&gt;%\n    summarize(\n        avg = mean(traffic_volume)\n        )\ntraffic_volume_avgs %&gt;%\n   ggplot(aes(x = dt_hour, y = avg)) +\n   geom_line() +\n   labs(\n     title = \"Average Traffic Volume at Different Hours\",\n     x = \"Hour of Day\",\n     y = \"Average Traffic Volume\"\n)"
+  },
+  {
+    "objectID": "about.html#heres-a-level-2-section",
+    "href": "about.html#heres-a-level-2-section",
+    "title": "About",
+    "section": "",
+    "text": "And then there’s some text below.\n\n\n\nlibrary(readr)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(ggplot2)\n\ni94_metro_interstate_traffic &lt;- read_csv(\"C:/Users/Admin/Downloads/i94_metro_interstate_traffic.csv\")\n\nRows: 48204 Columns: 15\n\n\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr  (6): holiday, weather_main, weather_description, dt_month, dt_wday, dt_...\ndbl  (8): temp, rain_1h, snow_1h, clouds_all, traffic_volume, dt_year, dt_da...\ndttm (1): date_time\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message."
+  },
+  {
+    "objectID": "about.html#hour-of-day",
+    "href": "about.html#hour-of-day",
+    "title": "About",
+    "section": "",
+    "text": "traffic_volume_avgs &lt;- i94_metro_interstate_traffic %&gt;% \n    group_by(dt_hour) %&gt;%\n    summarize(\n        avg = mean(traffic_volume)\n        )\ntraffic_volume_avgs %&gt;%\n   ggplot(aes(x = dt_hour, y = avg)) +\n   geom_line() +\n   labs(\n     title = \"Average Traffic Volume at Different Hours\",\n     x = \"Hour of Day\",\n     y = \"Average Traffic Volume\"\n)"
   }
 ]
